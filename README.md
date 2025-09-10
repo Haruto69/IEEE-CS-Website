@@ -64,7 +64,7 @@ IEEE-CS-Website/
 - Frontend React App: [http://localhost:3000](http://localhost:3000)
 
 ## 👥 Contributors
-- IEEE Computer Society RNSIT Student Branch
+- IEEE Computer Society RNSIT Students
 
 ---
 🔴 Background with red-highlighted text design planned for homepage with IEEE-CS and ImpactX logos.
