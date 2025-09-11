@@ -65,6 +65,7 @@ IEEE-CS-Website/
 
 ## 👥 Contributors
 - IEEE Computer Society RNSIT Students
+- Pavan G
 
 ---
 🔴 Background with red-highlighted text design planned for homepage with IEEE-CS and ImpactX logos.
