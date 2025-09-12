@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
-from api.views import home  # <-- import the home view
+from rest_framework.routers import DefaultRouter
+from events.views import EventViewSet
 
+router = DefaultRouter()
+router.register(r'events', EventViewSet)
 
 urlpatterns = [
-    path("", home),
-    path("admin/", admin.site.urls),
-    path("api/", include("api.urls")),  # only use the new api app
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
