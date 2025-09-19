@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom hero background style */
+.hero-bg {
+  background: linear-gradient(135deg, rgba(14,18,20,1) 0%, rgba(16,20,24,1) 40%, rgba(26,8,11,1) 100%);
+  background-blend-mode: multiply;
+}

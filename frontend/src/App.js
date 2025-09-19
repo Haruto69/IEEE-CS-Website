@@ -1,38 +1,36 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "./services/api";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import EventCard from "./components/EventCard";
+import Footer from "./components/Footer";
 
 function App() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/events/") // Your Django endpoint
-      .then((res) => setEvents(res.data))
-      .catch((err) => console.error(err));
+    api.get("events/")
+      .then(res => setEvents(res.data))
+      .catch(err => console.error("API error:", err));
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">Upcoming Events</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {events.length === 0 ? (
-          <p className="text-center text-gray-600">No events found</p>
-        ) : (
-          events.map((event) => (
-            <div key={event.id} className="bg-white shadow-lg rounded-2xl p-4">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-48 object-cover rounded-xl mb-4"
-              />
-              <h2 className="text-xl font-semibold">{event.title}</h2>
-              <p className="text-gray-600">{event.description}</p>
-              <p className="text-sm text-gray-500 mt-2">{event.date}</p>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Navbar />
+      <Hero />
+      <main className="max-w-6xl mx-auto px-6 -mt-20 relative z-10">
+        <section className="bg-transparent py-12">
+          <h2 className="text-3xl font-bold mb-6">Upcoming Events</h2>
+          {events.length === 0 ? (
+            <p className="text-gray-400">No events available right now.</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {events.map(ev => <EventCard key={ev.id} event={ev} />)}
             </div>
-          ))
-        )}
-      </div>
+          )}
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }

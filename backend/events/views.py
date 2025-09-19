@@ -3,5 +3,5 @@ from .models import Event
 from .serializers import EventSerializer
 
 class EventViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all()
+    queryset = Event.objects.order_by('-date', '-created_at')
     serializer_class = EventSerializer
