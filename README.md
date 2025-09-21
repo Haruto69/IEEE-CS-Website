@@ -1,70 +1,136 @@
 # IEEE-CS-Website
 
-This is the official website for **IEEE Computer Society RNSIT** built with a **Django REST Framework backend** and a **React + TailwindCSS frontend**.
+This is the official website for the IEEE Computer Society hackathon/event. It includes a **Django backend** and a **React frontend**.
 
-## 🚀 Features
-- Django backend serving REST API endpoints (`/api/events/`, `/api/register/`).
-- React frontend with TailwindCSS for styling.
-- Interactive event listing.
-- Easily extensible for new features like registrations, authentication, and announcements.
+## Project Structure
 
-## 🛠️ Tech Stack
-- **Backend:** Django, Django REST Framework
-- **Frontend:** React, TailwindCSS, Axios
-- **Database:** SQLite (default, can be changed to PostgreSQL/MySQL)
-- **Version Control:** Git & GitHub
-
-## 📂 Project Structure
 ```
-IEEE-CS-Website/
-│── backend/        # Django backend (API + admin + models)
-│── frontend/       # React frontend (UI + Axios API calls)
-│── .gitignore
-│── README.md
+.
+├── backend/             # Django backend
+├── frontend/            # React frontend
+├── README.md
+└── requirements.txt
 ```
 
-## ⚡ Setup Instructions
+## Prerequisites
 
-### Backend (Django)
-1. Navigate to the backend folder:
-   ```bash
-   cd backend
-   ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # (Linux/Mac)
-   venv\Scripts\activate    # (Windows)
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Run the Django server:
-   ```bash
-   python manage.py runserver
-   ```
+Make sure you have the following installed:
 
-### Frontend (React + TailwindCSS)
-1. Navigate to the frontend folder:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the React development server:
-   ```bash
-   npm start
-   ```
-
-## 🌐 Access
-- Backend API: [http://127.0.0.1:8000/api/events/](http://127.0.0.1:8000/api/events/)
-- Frontend React App: [http://localhost:3000](http://localhost:3000)
-
-## 👥 Contributors
-- IEEE Computer Society RNSIT Student Branch
+* Python 3.10+
+* Node.js 18+ and npm
+* Git
 
 ---
-🔴 Background with red-highlighted text design planned for homepage with IEEE-CS and ImpactX logos.
+
+## Backend Setup (Django)
+
+1. Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+2. Create a virtual environment (if not already created):
+
+```bash
+python -m venv venv
+```
+
+3. Activate the virtual environment:
+
+* **Windows (PowerShell)**:
+
+```bash
+.\venv\Scripts\Activate
+```
+
+* **Linux / macOS**:
+
+```bash
+source venv/bin/activate
+```
+
+4. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Apply database migrations:
+
+```bash
+python manage.py migrate
+```
+
+6. Run the development server:
+
+```bash
+python manage.py runserver
+```
+
+The backend will be available at `http://127.0.0.1:8000/`.
+
+---
+
+## Frontend Setup (React)
+
+1. Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the React development server:
+
+```bash
+npm start
+```
+
+The frontend will be available at `http://localhost:3000/`.
+
+---
+
+## Notes
+
+* **Static Files**: Ensure your Django settings for `STATIC_URL` and `STATICFILES_DIRS` point correctly to where your frontend builds or static files are stored.
+* **API Requests**: Your React app should call the Django backend API (usually `http://127.0.0.1:8000/api/...`).
+
+---
+
+## Troubleshooting
+
+* If you see errors about `react-scripts` not found, run:
+
+```bash
+npm install
+```
+
+* If Django warns about unapplied migrations:
+
+```bash
+python manage.py migrate
+```
+
+* If static files warnings appear, ensure `STATICFILES_DIRS` exists or remove the path if you don’t have a frontend build folder.
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add your feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
