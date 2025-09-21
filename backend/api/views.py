@@ -5,8 +5,15 @@ from django.http import HttpResponse
 @api_view(['GET'])
 def events_list(request):
     events = [
-        {"id": 1, "name": "Hackathon", "date": "2025-09-20"},
-        {"id": 2, "name": "Workshop", "date": "2025-09-25"},
+        {
+            "id": 1,
+            "name": "ImpactX Hackathon",
+            "date": "2025-10-24",
+            "date_display": "Oct 24-25, 2025",
+            "description": "24-hour innovation challenge at RNS Institute of Technology. Build, prototype and present solutions to real-world problems.",
+            "location": "RNSIT",
+            "type": "Hackathon"
+        }
     ]
     return Response(events)
 
