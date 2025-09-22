@@ -25,7 +25,7 @@ export default function Register() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold holographic-text text-white mb-6">
               Join ImpactX 25
             </h1>
 
@@ -83,7 +83,7 @@ export default function Register() {
           {/* Prize Pool */}
           <div className="mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold holographic-text mb-4">
+              <h2 className="text-4xl font-bold holographic-text text-white mb-4">
                 Prize Pool: ₹50,000
               </h2>
               <p className="text-lg md:text-xl text-gray-300">
@@ -129,7 +129,7 @@ export default function Register() {
 
           {/* Registration Details */}
           <div className="glass rounded-2xl p-8">
-            <h2 className="text-3xl font-bold holographic-text mb-6 text-center">
+            <h2 className="text-3xl font-bold holographic-text mb-6 text-center text-white">
               Registration Details
             </h2>
             

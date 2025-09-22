@@ -89,14 +89,14 @@ export default function Timeline() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-6" style={{ color: 'white' }}>
               IEEE-CS Event Timeline
             </h1>
             <div className="glass rounded-2xl p-6">
-              <p className="text-xl text-gray-300 mb-4">
+              <p className="text-xl text-white mb-4">
                 Schedule of IEEE Computer Society events for this semester
               </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
+              <div className="flex items-center justify-center gap-4 text-sm text-white">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-400" />
                   <span>Completed</span>
@@ -121,7 +121,7 @@ export default function Timeline() {
                 className={`px-6 py-3 rounded-lg transition-all duration-300 ${
                   selectedDay === 'day1' 
                     ? 'bg-red-600/30 text-white border border-red-500/50' 
-                    : 'text-gray-400 hover:text-white'
+                    : 'text-white hover:text-white/80'
                 }`}
               >
                 Day 1
@@ -131,7 +131,7 @@ export default function Timeline() {
                 className={`px-6 py-3 rounded-lg transition-all duration-300 ${
                   selectedDay === 'day2' 
                     ? 'bg-red-600/30 text-white border border-red-500/50' 
-                    : 'text-gray-400 hover:text-white'
+                    : 'text-white hover:text-white/80'
                 }`}
               >
                 Day 2
@@ -141,16 +141,13 @@ export default function Timeline() {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Vertical line behind nodes */}
             <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-red-500 to-red-600 z-0"></div>
 
-            {/* Timeline Events */}
             <div className="space-y-12">
               {currentEvents.map((event, index) => {
                 const IconComponent = event.icon;
                 return (
                   <div key={index} className="relative flex items-start gap-6">
-                    {/* Timeline Node */}
                     <div className="relative z-10 flex-shrink-0">
                       <div className={`w-16 h-16 rounded-full glass flex items-center justify-center transition-all duration-300 ${
                         event.status === 'completed' ? 'bg-green-600/30 border-green-400/50' :
@@ -160,12 +157,11 @@ export default function Timeline() {
                         <IconComponent className={`w-8 h-8 ${
                           event.status === 'completed' ? 'text-green-400' :
                           event.status === 'active' ? 'text-red-400' :
-                          'text-gray-400'
+                          'text-white'
                         }`} />
                       </div>
                     </div>
 
-                    {/* Event Content */}
                     <div className="flex-1 min-w-0">
                       <div className={`glass rounded-2xl p-6 transition-all duration-300 ${
                         event.status === 'active' ? 'border-red-400/50 glow-red' : ''
@@ -175,12 +171,12 @@ export default function Timeline() {
                           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                             event.status === 'completed' ? 'bg-green-600/20 text-green-400' :
                             event.status === 'active' ? 'bg-red-600/20 text-red-400' :
-                            'bg-gray-600/20 text-gray-400'
+                            'bg-gray-600/20 text-white'
                           }`}>
                             {event.time}
                           </span>
                         </div>
-                        <p className="text-gray-300">{event.description}</p>
+                        <p className="text-white">{event.description}</p>
 
                         {event.status === 'active' && (
                           <div className="mt-4 p-3 bg-red-600/10 border border-red-500/20 rounded-xl">
@@ -199,17 +195,19 @@ export default function Timeline() {
 
           {/* Notes */}
           <div className="mt-16 glass rounded-2xl p-8">
-            <h2 className="text-2xl font-bold holographic-text mb-6">Important Notes</h2>
+            <h2 className="text-2xl font-bold holographic-text mb-6" style={{ color: 'white' }}>
+              Important Notes
+            </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-3">Venue & Date</h3>
-                <p className="text-gray-300 mb-4">RNS Institute of Technology, Upcoming Semester</p>
+                <p className="text-white mb-4">RNS Institute of Technology, Upcoming Semester</p>
                 <h3 className="text-lg font-semibold text-white mb-3">Event Format</h3>
-                <p className="text-gray-300 mb-4">On-campus sessions, workshops, and seminars</p>
+                <p className="text-white mb-4">On-campus sessions, workshops, and seminars</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
-                <p className="text-gray-300">ieeecsrnsit@gmail.com</p>
+                <p className="text-white">ieeecsrnsit@gmail.com</p>
               </div>
             </div>
           </div>
