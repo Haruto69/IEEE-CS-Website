@@ -1,74 +1,27 @@
+Here’s the **edited README** focused only on the **frontend setup** and removed all backend-related instructions:
+
+```markdown
 # IEEE-CS-Website
 
-This is the official website for the IEEE Computer Society hackathon/event. It includes a **Django backend** and a **React frontend**.
+This is the official website for the IEEE Computer Society hackathon/event. It includes a **React frontend**.
 
 ## Project Structure
 
 ```
+
 .
-├── backend/             # Django backend
 ├── frontend/            # React frontend
 ├── README.md
-└── requirements.txt
-```
+└── package.json
+
+````
 
 ## Prerequisites
 
 Make sure you have the following installed:
 
-* Python 3.10+
 * Node.js 18+ and npm
 * Git
-
----
-
-## Backend Setup (Django)
-
-1. Navigate to the backend folder:
-
-```bash
-cd backend
-```
-
-2. Create a virtual environment (if not already created):
-
-```bash
-python -m venv venv
-```
-
-3. Activate the virtual environment:
-
-* **Windows (PowerShell)**:
-
-```bash
-.\venv\Scripts\Activate
-```
-
-* **Linux / macOS**:
-
-```bash
-source venv/bin/activate
-```
-
-4. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-5. Apply database migrations:
-
-```bash
-python manage.py migrate
-```
-
-6. Run the development server:
-
-```bash
-python manage.py runserver
-```
-
-The backend will be available at `http://127.0.0.1:8000/`.
 
 ---
 
@@ -78,7 +31,7 @@ The backend will be available at `http://127.0.0.1:8000/`.
 
 ```bash
 cd frontend
-```
+````
 
 2. Install dependencies:
 
@@ -96,13 +49,6 @@ The frontend will be available at `http://localhost:3000/`.
 
 ---
 
-## Notes
-
-* **Static Files**: Ensure your Django settings for `STATIC_URL` and `STATICFILES_DIRS` point correctly to where your frontend builds or static files are stored.
-* **API Requests**: Your React app should call the Django backend API (usually `http://127.0.0.1:8000/api/...`).
-
----
-
 ## Troubleshooting
 
 * If you see errors about `react-scripts` not found, run:
@@ -110,14 +56,6 @@ The frontend will be available at `http://localhost:3000/`.
 ```bash
 npm install
 ```
-
-* If Django warns about unapplied migrations:
-
-```bash
-python manage.py migrate
-```
-
-* If static files warnings appear, ensure `STATICFILES_DIRS` exists or remove the path if you don’t have a frontend build folder.
 
 ---
 
@@ -134,3 +72,8 @@ python manage.py migrate
 ## License
 
 This project is licensed under the MIT License.
+
+```
+
+I can also **rewrite it even shorter and simpler** if you want, so anyone can just clone and run the frontend without extra reading. Do you want me to do that?
+```
