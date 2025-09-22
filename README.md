@@ -1,6 +1,3 @@
-Here’s the **edited README** focused only on the **frontend setup** and removed all backend-related instructions:
-
-```markdown
 # IEEE-CS-Website
 
 This is the official website for the IEEE Computer Society hackathon/event. It includes a **React frontend**.
@@ -8,13 +5,11 @@ This is the official website for the IEEE Computer Society hackathon/event. It i
 ## Project Structure
 
 ```
-
 .
 ├── frontend/            # React frontend
 ├── README.md
 └── package.json
-
-````
+```
 
 ## Prerequisites
 
@@ -31,7 +26,7 @@ Make sure you have the following installed:
 
 ```bash
 cd frontend
-````
+```
 
 2. Install dependencies:
 
@@ -72,8 +67,3 @@ npm install
 ## License
 
 This project is licensed under the MIT License.
-
-```
-
-I can also **rewrite it even shorter and simpler** if you want, so anyone can just clone and run the frontend without extra reading. Do you want me to do that?
-```
