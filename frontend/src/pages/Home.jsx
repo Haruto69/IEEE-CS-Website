@@ -56,7 +56,7 @@ const Home = () => {
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20">
         <div className="max-w-6xl mx-auto text-center">
           <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
-            <img src={Logo} alt="IEEE Logo" className="w-50 h-auto mb-6" />
+            <img src={Logo} alt="IEEE Logo" className="w-1/2 h-auto mb-0" />
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white">Welcome!</h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-4">Your IEEE member dashboard</p>
             <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
@@ -64,17 +64,20 @@ const Home = () => {
             </p>
           </div>
 
+          {/* Info Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {infoBoxes.map((box) => (
               <GlassButton
                 key={box.title}
-                className="flex flex-col items-center text-center p-6 rounded-2xl 
-                           bg-white/10 backdrop-blur-md border border-white/20 
-                           hover:scale-105 transition-transform duration-300 shadow-lg"
+                className="flex flex-col items-center text-center p-6 rounded-2xl
+                          bg-red-600/20 border-red-400/40
+                          shadow-[0_0_12px_rgba(239,68,68,0.7)]
+                          hover:shadow-[0_0_25px_rgba(239,68,68,1)]
+                          hover:scale-105 transition-transform duration-300"
               >
                 {box.icon}
-                <h3 className="text-lg font-semibold">{box.title}</h3>
-                <p className="text-gray-400 text-sm">{box.description}</p>
+                <h3 className="text-lg font-semibold text-white mt-2">{box.title}</h3>
+                <p className="text-gray-300 text-sm mt-1">{box.description}</p>
               </GlassButton>
             ))}
           </div>

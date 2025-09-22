@@ -1,9 +1,11 @@
+//Timeline.jsx
 import React, { useState } from 'react';
 import { Clock, CheckCircle, Circle, Users, Code, Trophy, Coffee, Presentation, Award } from 'lucide-react';
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
 import ImpactXNavbar from '../components/ImpactXNavbar';
 import Navbar from "../components/Navbar";
+import FloatingShapes from '../components/backgrounds/FloatingShapes';
 
 const day1Events = [
   {
@@ -84,6 +86,7 @@ export default function Timeline() {
       <InteractiveParticles />
       <ImpactXNavbar />
       <Navbar />
+      <FloatingShapes />
 
       <div className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto">

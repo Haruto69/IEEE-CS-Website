@@ -1,3 +1,4 @@
+//Sponsors.jsx
 import React, { useState } from 'react';
 import { Mail, ExternalLink, Heart, Award, Users, Target } from 'lucide-react';
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
@@ -5,6 +6,7 @@ import InteractiveParticles from '../components/backgrounds/InteractiveParticles
 import GlassButton from '../components/ui/GlassButton';
 import ImpactXNavbar from '../components/ImpactXNavbar';
 import Navbar from "../components/Navbar";
+import FloatingShapes from '../components/backgrounds/FloatingShapes';
 
 const currentSponsors = [
   {
@@ -86,6 +88,7 @@ export default function Sponsors() {
       <InteractiveParticles />
       <ImpactXNavbar />
       <Navbar />
+      <FloatingShapes />
 
       <div className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">

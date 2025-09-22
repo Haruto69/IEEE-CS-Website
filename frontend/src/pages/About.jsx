@@ -1,9 +1,12 @@
+//About.jsx
 import React from 'react';
 import { Target, Lightbulb, Code, Award, Users, Globe, Leaf, Shield, GitMerge } from 'lucide-react';
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
 import ImpactXNavbar from '../components/ImpactXNavbar';
 import Navbar from "../components/Navbar";
+import GlassButton from "../components/ui/GlassButton";
+import FloatingShapes from '../components/backgrounds/FloatingShapes';
 
 const themes = [
   {
@@ -39,6 +42,7 @@ export default function About() {
       <InteractiveParticles />
       <ImpactXNavbar />
       <Navbar />
+      <FloatingShapes />
       
       <div className="relative z-10 py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
@@ -47,13 +51,18 @@ export default function About() {
             <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-6 text-white">
               About ImpactX 25
             </h1>
-            <div className="glass rounded-2xl p-8 max-w-4xl mx-auto">
+            <GlassButton
+              className="rounded-2xl p-8 max-w-4xl mx-auto mb-8 w-full
+                         bg-red-600/20 border-red-400/40 
+                         shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                         hover:shadow-[0_0_25px_rgba(239,68,68,1)]"
+            >
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                 ImpactX 25 is more than just a hackathon – it's a catalyst for innovation, 
                 a platform for breakthrough ideas, and a community where brilliant minds 
                 converge to create solutions that matter.
               </p>
-            </div>
+            </GlassButton>
           </div>
 
           {/* Themes Section */}
@@ -71,9 +80,13 @@ export default function About() {
               {themes.map((theme, index) => {
                 const Icon = theme.icon;
                 return (
-                  <div
+                  <GlassButton
                     key={index}
-                    className="glass rounded-2xl p-8 transition-all duration-300 hover:border-red-400/50 hover:glow-red"
+                    className="rounded-2xl p-8 w-full text-left 
+                               bg-red-600/20 border-red-400/40
+                               shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                               hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                               hover:scale-105 transition-transform duration-300"
                   >
                     <div className="flex items-center mb-4">
                       <Icon className="w-10 h-10 text-red-400 mr-4" />
@@ -87,7 +100,7 @@ export default function About() {
                         ))}
                       </ul>
                     )}
-                  </div>
+                  </GlassButton>
                 );
               })}
             </div>
@@ -95,7 +108,11 @@ export default function About() {
 
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-            <div className="glass rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+            <GlassButton className="rounded-2xl p-8 w-full 
+                                    bg-red-600/20 border-red-400/40
+                                    shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                                    hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                                    hover:scale-105 transition-transform duration-300">
               <Target className="w-12 h-12 text-red-400 mb-4" />
               <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
               <p className="text-gray-300 text-lg leading-relaxed">
@@ -103,9 +120,13 @@ export default function About() {
                 creativity meets technology, fostering collaboration and pushing the boundaries 
                 of what's possible in 24 intensive hours.
               </p>
-            </div>
+            </GlassButton>
             
-            <div className="glass rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+            <GlassButton className="rounded-2xl p-8 w-full 
+                                    bg-red-600/20 border-red-400/40
+                                    shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                                    hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                                    hover:scale-105 transition-transform duration-300">
               <Lightbulb className="w-12 h-12 text-red-400 mb-4" />
               <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
               <p className="text-gray-300 text-lg leading-relaxed">
@@ -113,7 +134,7 @@ export default function About() {
                 and real-world impact, creating solutions that address global challenges and 
                 shape the future of technology.
               </p>
-            </div>
+            </GlassButton>
           </div>
 
           {/* What Makes Us Special */}
@@ -124,69 +145,40 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <Code className="w-16 h-16 text-red-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">Cutting-Edge Technology</h3>
-              <p className="text-gray-300">
-                Access to latest frameworks, APIs, and development tools. From AI/ML to blockchain, 
-                we provide everything you need to build the future.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <Users className="w-16 h-16 text-red-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">Expert Mentorship</h3>
-              <p className="text-gray-300">
-                Learn from industry veterans, startup founders, and tech leaders who will guide 
-                you throughout your 24-hour journey.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <Globe className="w-16 h-16 text-red-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">Global Impact Focus</h3>
-              <p className="text-gray-300">
-                Projects that matter. We encourage solutions addressing real-world problems - 
-                from climate change to social inequality.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <Award className="w-16 h-16 text-red-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">Recognition & Prizes</h3>
-              <p className="text-gray-300">
-                Win exciting prizes, internship opportunities, and most importantly, 
-                recognition from leading tech companies and investors.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Startup Incubation</h3>
-              <p className="text-gray-300">
-                Exceptional projects get fast-tracked into our partner incubators with 
-                seed funding opportunities and continued mentorship.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌟</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Lifetime Community</h3>
-              <p className="text-gray-300">
-                Join a network of innovators, entrepreneurs, and creators that extends 
-                far beyond the 24-hour event. Build lasting connections.
-              </p>
-            </div>
+            {[
+              { icon: Code, title: "Cutting-Edge Technology", description: "Access to latest frameworks, APIs, and development tools. From AI/ML to blockchain, we provide everything you need to build the future." },
+              { icon: Users, title: "Expert Mentorship", description: "Learn from industry veterans, startup founders, and tech leaders who will guide you throughout your 24-hour journey." },
+              { icon: Globe, title: "Global Impact Focus", description: "Projects that matter. We encourage solutions addressing real-world problems - from climate change to social inequality." },
+              { icon: Award, title: "Recognition & Prizes", description: "Win exciting prizes, internship opportunities, and most importantly, recognition from leading tech companies and investors." },
+              { icon: null, title: "Startup Incubation", description: "Exceptional projects get fast-tracked into our partner incubators with seed funding opportunities and continued mentorship.", emoji: "🚀" },
+              { icon: null, title: "Lifetime Community", description: "Join a network of innovators, entrepreneurs, and creators that extends far beyond the 24-hour event. Build lasting connections.", emoji: "🌟" }
+            ].map((item, idx) => (
+              <GlassButton
+                key={idx}
+                className="rounded-2xl p-6 w-full text-center 
+                           bg-red-600/20 border-red-400/40
+                           shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                           hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                           hover:scale-105 transition-transform duration-300"
+              >
+                {item.icon ? (
+                  <item.icon className="w-16 h-16 text-red-400 mx-auto mb-4" />
+                ) : (
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">{item.emoji}</span>
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-300">{item.description}</p>
+              </GlassButton>
+            ))}
           </div>
 
           {/* By the Numbers */}
           <div className="glass rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold holographic-text mb-8 text-white">ImpactX by the Numbers</h2>
-            
+            <h2 className="text-3xl font-bold holographic-text mb-8 text-white">
+              ImpactX by the Numbers
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <p className="text-4xl font-bold text-red-400 mb-2">500+</p>
