@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, Calendar as CalendarIcon, Users as UsersIcon } from 'lucide-react';
@@ -27,9 +26,11 @@ export default function Navbar({ hideButtons = [] }) {
                   size="md"
                   className={`flex items-center gap-2 px-5 py-2 text-sm font-medium 
                               transition-all duration-200 hover:scale-105 
-                              border border-red-500/30 bg-white/10 backdrop-blur-md
+                              border border-white/20 bg-white/10 backdrop-blur-md
                               rounded-full
-                              ${active ? "bg-red-500/20 text-white shadow-lg" : "text-white/80"}`}
+                              ${active 
+                                ? "text-white shadow-[0_0_20px_#ff4d4d] hover:shadow-[0_0_25px_#ff4d4d]" 
+                                : "text-white/80 hover:bg-white/20"}`}
                 >
                   <it.Icon className="w-4 h-4" />
                   <span>{it.name}</span>

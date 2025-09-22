@@ -2,6 +2,8 @@ import React from 'react';
 import { Target, Lightbulb, Code, Award, Users, Globe, Leaf, Shield, GitMerge } from 'lucide-react';
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
+import ImpactXNavbar from '../components/ImpactXNavbar';
+import Navbar from "../components/Navbar";
 
 const themes = [
   {
@@ -35,6 +37,8 @@ export default function About() {
     <div className="relative min-h-screen">
       <HolographicBackground />
       <InteractiveParticles />
+      <ImpactXNavbar />
+      <Navbar />
       
       <div className="relative z-10 py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Clock, CheckCircle, Circle, Users, Code, Trophy, Coffee, Presentation, Award } from 'lucide-react';
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
+import ImpactXNavbar from '../components/ImpactXNavbar';
+import Navbar from "../components/Navbar";
 
 const day1Events = [
   {
@@ -74,14 +76,15 @@ const day2Events = [
 
 export default function Timeline() {
   const [selectedDay, setSelectedDay] = useState('day1');
-
   const currentEvents = selectedDay === 'day1' ? day1Events : day2Events;
 
   return (
     <div className="relative min-h-screen">
       <HolographicBackground />
       <InteractiveParticles />
-      
+      <ImpactXNavbar />
+      <Navbar />
+
       <div className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -112,7 +115,7 @@ export default function Timeline() {
 
           {/* Day Selector */}
           <div className="flex justify-center mb-12">
-            <div className="glass rounded-xl p-2 flex">
+            <div className="glass rounded-xl p-2 flex z-10 relative">
               <button
                 onClick={() => setSelectedDay('day1')}
                 className={`px-6 py-3 rounded-lg transition-all duration-300 ${
@@ -138,12 +141,16 @@ export default function Timeline() {
 
           {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-600 via-red-500 to-red-600"></div>
-            <div className="space-y-8">
+            {/* Vertical line behind nodes */}
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-red-500 to-red-600 z-0"></div>
+
+            {/* Timeline Events */}
+            <div className="space-y-12">
               {currentEvents.map((event, index) => {
                 const IconComponent = event.icon;
                 return (
                   <div key={index} className="relative flex items-start gap-6">
+                    {/* Timeline Node */}
                     <div className="relative z-10 flex-shrink-0">
                       <div className={`w-16 h-16 rounded-full glass flex items-center justify-center transition-all duration-300 ${
                         event.status === 'completed' ? 'bg-green-600/30 border-green-400/50' :
@@ -157,6 +164,8 @@ export default function Timeline() {
                         }`} />
                       </div>
                     </div>
+
+                    {/* Event Content */}
                     <div className="flex-1 min-w-0">
                       <div className={`glass rounded-2xl p-6 transition-all duration-300 ${
                         event.status === 'active' ? 'border-red-400/50 glow-red' : ''
@@ -172,6 +181,7 @@ export default function Timeline() {
                           </span>
                         </div>
                         <p className="text-gray-300">{event.description}</p>
+
                         {event.status === 'active' && (
                           <div className="mt-4 p-3 bg-red-600/10 border border-red-500/20 rounded-xl">
                             <p className="text-red-400 text-sm font-medium">
