@@ -14,12 +14,12 @@ const currentSponsors = [
   },
   {
     name: "0xday",
-    logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/62d6407b4657a_0xday.png?d=240x100",
+    logo: "/0xday.png",  // updated to public folder
     description: "Cybersecurity community & events"
   },
   {
     name: "IEEE CS Bangalore",
-    logo: "https://ieeecs-bangalore.org/wp-content/uploads/2022/11/ieee-cs-logo-300x126.png",
+    logo: "/cs-black.png", // updated to public folder
     description: "IEEE Computer Society Bangalore Section"
   }
 ];
