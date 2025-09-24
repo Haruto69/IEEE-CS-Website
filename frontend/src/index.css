@@ -1,3 +1,119 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Site-wide font: Palatino (system serif fallbacks) */
+html, body, #root {
+	font-family: "Palatino Linotype", "Palatino", "URW Palladio L", "Book Antiqua", serif;
+}
+
+/* Global glassmorphism utilities and autofill fixes
+	 - Define .glass and .glass-button so components using them get a consistent look
+	 - Override browser autofill styles so inputs/selects/textareas keep the translucent background,
+		 text color and border (prevents autofill from making fields or nearby elements appear fully white)
+*/
+:root {
+	--glass-bg: rgba(255,255,255,0.02);
+	--glass-border: rgba(255,255,255,0.08);
+	--glass-input-bg: rgba(0,0,0,0.3); /* matches Tailwind bg-black/30 */
+}
+
+.glass {
+	background: var(--glass-bg);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid var(--glass-border);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+}
+
+.glass-button {
+	/* Neutral glass button with stronger lines to match the original glass appearance */
+	background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid var(--glass-border);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+	transition: all 0.3s ease;
+}
+
+/* Hover: brighten slightly but remain neutral (no color tint) */
+.glass-button:hover {
+	background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.06));
+	border-color: rgba(255,255,255,0.12);
+	box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.14);
+	transform: translateY(-2px);
+}
+
+/* Autofill fixes for Chromium-based browsers: preserve translucent background and white text */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill:hover,
+select:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: #ffffff !important;
+	-webkit-box-shadow: 0 0 0px 1000px var(--glass-input-bg) inset !important;
+	box-shadow: 0 0 0px 1000px var(--glass-input-bg) inset !important;
+	background-color: var(--glass-input-bg) !important;
+	border: 1px solid rgba(255,255,255,0.12) !important;
+	background-clip: padding-box !important;
+}
+
+/* Also ensure the autofilled placeholder/text remains visible on some engines */
+input:-webkit-autofill::first-line,
+textarea:-webkit-autofill::first-line {
+	color: #ffffff !important;
+}
+
+	/* Additional autofill vendor selectors (Firefox/old engines) and transition-hack */
+	input:-internal-autofill-selected,
+	input:-moz-autofill,
+	textarea:-moz-autofill,
+	select:-moz-autofill {
+		-webkit-text-fill-color: #ffffff !important;
+		box-shadow: 0 0 0px 1000px var(--glass-input-bg) inset !important;
+		background-color: var(--glass-input-bg) !important;
+	}
+
+	/* Prevent browsers from animating autofill background unexpectedly */
+	input:-webkit-autofill,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:focus {
+		transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s !important;
+	}
+
+		/* If an earlier input/select/textarea is autofilled, some browsers paint a large inset box-shadow
+			 which can visually overflow and affect following siblings (like the submit button).
+			 Target following sibling buttons (and elements with .glass-button) and force the intended
+			 glass-button appearance so the autofill highlight doesn't turn the button fully white.
+		*/
+		input:-webkit-autofill ~ .glass-button,
+		textarea:-webkit-autofill ~ .glass-button,
+		select:-webkit-autofill ~ .glass-button,
+		input:-webkit-autofill ~ button,
+		textarea:-webkit-autofill ~ button,
+		select:-webkit-autofill ~ button {
+			/* Force neutral glass appearance for following sibling buttons so autofill highlight
+				 doesn't visually overflow and tint them */
+			background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03)) !important;
+			-webkit-backdrop-filter: blur(12px) !important;
+			backdrop-filter: blur(12px) !important;
+			border: 1px solid rgba(255,255,255,0.06) !important;
+			color: #ffffff !important;
+			-webkit-box-shadow: none !important;
+			box-shadow: none !important;
+		}
+
+		/* Also handle cases where autofill applies to a focused/hovered input */
+		input:-webkit-autofill:focus ~ .glass-button,
+		textarea:-webkit-autofill:focus ~ .glass-button,
+		select:-webkit-autofill:focus ~ .glass-button {
+			transform: translateY(0) !important; /* prevent unexpected transform inheritance */
+		}
+
