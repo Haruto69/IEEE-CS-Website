@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Members from "./pages/Members";
-import Timeline from "./pages/Timeline";
-import Sponsors from "./pages/Sponsors";
 import About from "./pages/About"; // make sure this exists
 import ImpactXHome from "./pages/ImpactXHome";
 import Register from "./pages/Register"; // new register page
@@ -20,8 +18,7 @@ function App() {
         <Route path="/impactx-register" element={<Register />} /> {/* new route */}
         <Route path="/members" element={<Members />} />
         <Route path="/about" element={<About />} />
-        <Route path="/timeline" element={<Timeline />} />
-        <Route path="/sponsors" element={<Sponsors />} />
+        
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
