@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, Calendar, MapPin, Users, Clock, Target, Lightbulb, Code, Award, 
-  Globe, Leaf, Shield, GitMerge, Mail, ExternalLink, Trophy, CheckCircle, 
+  ArrowRight, Calendar, MapPin, Users, Lightbulb, Code, Award, 
+  Globe, Leaf, Mail, ExternalLink, Trophy, CheckCircle, 
   Circle, Presentation, Coffee, 
   Utensils,
   ClipboardCheck,
@@ -18,7 +17,7 @@ import HolographicBackground from '../components/backgrounds/HolographicBackgrou
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
 import FloatingShapes from '../components/backgrounds/FloatingShapes';
 import GlassButton from '../components/ui/GlassButton';
-import ImpactXNavbar from '../components/ImpactXNavbar';
+
 import Navbar from "../components/Navbar";
 import Logo from "../assets/impactx-logo.png";
 
