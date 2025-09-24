@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HolographicBackground from "../components/backgrounds/HolographicBackground";
 import InteractiveParticles from "../components/backgrounds/InteractiveParticles";
 import GlassButton from "../components/ui/GlassButton";
+import GlassSelect from "../components/ui/GlassSelect";
 import FloatingShapes from '../components/backgrounds/FloatingShapes';
 import { Clock, Users, Calendar, MapPin } from "lucide-react";
 import Logo from "../assets/ieee-logo.png";
@@ -52,13 +53,21 @@ const Home = () => {
       {/* Navbar */}
       <Navbar />
 
+      {/* Header logo (scrollable) — larger and slightly clearer for a professional look */}
+      <div className="w-full flex justify-center mt-6 z-10">
+        <div className="glass rounded-full p-2 bg-white/3 backdrop-blur-sm">
+          <img src={Logo} alt="IEEE Logo" className="w-40 md:w-56 h-auto filter brightness-105 drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]" />
+        </div>
+      </div>
+      
+
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
-            <img src={Logo} alt="IEEE Logo" className="w-1/2 h-auto mb-0" />
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white">Welcome!</h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-4">Your IEEE member dashboard</p>
+  <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20">
+    <div className="flex-1 flex flex-col justify-center items-center text-center max-w-6xl mx-auto">
+              <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
+
+            <h2 className="text-5xl md:text-7xl font-bold mb-4 text-white">Welcome!</h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8">Your IEEE member dashboard</p>
             <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
               Access upcoming events, check notifications, and stay updated with the latest IEEE activities.
             </p>
@@ -70,9 +79,9 @@ const Home = () => {
               <GlassButton
                 key={box.title}
                 className="flex flex-col items-center text-center p-6 rounded-2xl
-                          bg-red-600/20 border-red-400/40
-                          shadow-[0_0_12px_rgba(239,68,68,0.7)]
-                          hover:shadow-[0_0_25px_rgba(239,68,68,1)]
+                          bg-transparent border-white/10
+                          shadow-none
+                          hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]
                           hover:scale-105 transition-transform duration-300"
               >
                 {box.icon}
@@ -82,49 +91,56 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Contact Form */}
-          <div className="glass rounded-3xl p-8 md:p-12 mx-auto max-w-2xl flex flex-col items-center text-white">
+          {/* Contact Form (wider) - moved into hero area */}
+          <div className="glass rounded-3xl p-8 md:p-12 mx-auto w-full flex flex-col items-center text-white">
             <h3 className="text-3xl font-bold mb-6">Contact Us</h3>
-            <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none"
-              />
-              <input
-                type="email"
-                name="_replyto"
-                placeholder="Your Email"
-                required
-                className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none"
-              />
-              <select
+            <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none"
+                />
+                <input
+                  type="email"
+                  name="_replyto"
+                  placeholder="Your Email"
+                  required
+                  className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none"
+                />
+              </div>
+
+              <GlassSelect
                 name="category"
                 required
-                className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none"
-              >
-                <option value="">Select Category</option>
-                <option value="Technical">Technical</option>
-                <option value="Recruitment">Recruitment</option>
-                <option value="Events">Events</option>
-                <option value="Membership">Membership</option>
-                <option value="Other">Other</option>
-              </select>
+                placeholder="Select Category"
+                options={[
+                  { value: '', label: 'Select Category' },
+                  { value: 'Technical', label: 'Technical' },
+                  { value: 'Recruitment', label: 'Recruitment' },
+                  { value: 'Events', label: 'Events' },
+                  { value: 'Membership', label: 'Membership' },
+                  { value: 'Other', label: 'Other' },
+                ]}
+              />
+
               <textarea
                 name="message"
                 placeholder="Your Message"
                 required
-                rows={5}
+                rows={6}
                 className="w-full p-3 rounded-md bg-black/30 border border-white/20 placeholder-gray-400 text-white focus:outline-none resize-none"
               ></textarea>
-              <button
+
+              <GlassButton
                 type="submit"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold transition-colors"
+                className="w-full px-6 py-3 mt-2 backdrop-blur-md bg-white/6 border border-white/20 text-white font-semibold text-lg rounded-2xl shadow-none hover:shadow-[0_0_20px_rgba(255,255,255,0.04)] hover:scale-105 transition-all duration-300"
               >
                 Send Message
-              </button>
+              </GlassButton>
+
             </form>
             {formStatus && (
               <p className="mt-4 text-center text-green-400">{formStatus}</p>
@@ -133,6 +149,8 @@ const Home = () => {
 
         </div>
       </section>
+
+      
     </div>
   );
 };
