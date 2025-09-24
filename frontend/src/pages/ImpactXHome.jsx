@@ -381,11 +381,11 @@ export default function ImpactXHome() {
             {/* Header */}
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-6 text-white">
-                IEEE-CS Event Timeline
+                ImpactX'25 Timeline
               </h1>
               <div className="glass rounded-2xl p-6">
                 <p className="text-xl text-white mb-4">
-                  Schedule of IEEE Computer Society events for this semester
+                  Schedule of the overall hackathon
                 </p>
                 <div className="flex items-center justify-center gap-4 text-sm text-white">
                   <div className="flex items-center gap-2">
