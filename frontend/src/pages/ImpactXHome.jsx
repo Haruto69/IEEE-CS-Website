@@ -336,7 +336,7 @@ export default function ImpactXHome() {
                   <p className="text-gray-300">Expert Mentors</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-red-400 mb-2">₹1L+</p>
+                  <p className="text-4xl font-bold text-red-400 mb-2">₹50k</p>
                   <p className="text-gray-300">Total Prize Pool</p>
                 </div>
               </div>
@@ -447,24 +447,9 @@ export default function ImpactXHome() {
               </div>
             </div>
 
-            {/* Notes */}
-            <div className="mt-16 glass rounded-2xl p-8">
-              <h2 className="text-2xl font-bold holographic-text mb-6 text-white">
-                Important Notes
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Venue & Date</h3>
-                  <p className="text-white mb-4">RNS Institute of Technology, Upcoming Semester</p>
-                  <h3 className="text-lg font-semibold text-white mb-3">Event Format</h3>
-                  <p className="text-white mb-4">On-campus sessions, workshops, and seminars</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
-                  <p className="text-white">ieeecsrnsit@gmail.com</p>
-                </div>
-              </div>
-            </div>
+            
+        
+                
           </div>
         </div>
       </section>
