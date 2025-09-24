@@ -25,7 +25,7 @@ import Logo from "../assets/impactx-logo.png";
 // Themes for About section
 const themes = [
   { 
-    title: "Sustainability and Earth Tech", 
+    title: "Sustainability in Green Tech", 
     description: "Create eco-friendly solutions for a greener future.", 
     icon: Leaf, 
     examples: [
@@ -51,6 +51,35 @@ const themes = [
     examples: ["Agritech solutions", "Vernacular language tools", "Digital literacy platforms"] 
   },
 ];
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+  {themes.map((theme, index) => {
+    const Icon = theme.icon;
+    return (
+      <GlassButton
+        key={index}
+        className={`rounded-2xl p-8 w-full text-left 
+                   bg-red-600/20 border-red-400/40
+                   shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                   hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                   hover:scale-105 transition-transform duration-300
+                   ${index === 2 ? "md:col-span-2 md:w-1/2 justify-self-center" : ""}`}
+      >
+        <div className="flex items-center mb-4">
+          <Icon className="w-10 h-10 text-red-400 mr-4" />
+          <h3 className="text-2xl font-bold text-white">{theme.title}</h3>
+        </div>
+        <p className="text-gray-300 text-lg">{theme.description}</p>
+        {theme.examples && (
+          <ul className="mt-3 text-sm text-gray-400 list-disc list-inside">
+            {theme.examples.map((ex, i) => (
+              <li key={i}>{ex}</li>
+            ))}
+          </ul>
+        )}
+      </GlassButton>
+    );
+  })}
+</div>
 
 
 
@@ -62,7 +91,7 @@ const day1Events = [
   { time: "04:30 PM", title: "Tea Break", icon: Coffee, status: "upcoming" },
   { time: "05:30 PM - 06:30 PM", title: "Jury Checkpoint 1", description: "Judges/Mentors go around for the first checkpoint", icon: ClipboardCheck, status: "upcoming" },
   { time: "08:00 PM - 09:30 PM", title: "Dinner",  icon: Utensils, status: "upcoming" },
-  { time: "09:30 PM - 10:00 PM", title: "Jury Checkpoint 12", description: "Early prototype evaluation", icon: ClipboardCheck, status: "upcoming" },
+  { time: "09:30 PM - 10:00 PM", title: "Jury Checkpoint 2", description: "Early prototype evaluation", icon: ClipboardCheck, status: "upcoming" },
   { time: "11:30 PM Onwards", title: "Night Sprint", icon: Moon, status: "upcoming" },
 ];
 
@@ -136,7 +165,7 @@ export default function ImpactXHome() {
             {/* Team & Fee Info (hero) */}
             <div className="flex justify-center mb-4">
               <div className="glass rounded-full px-5 py-2 text-white/90 text-lg md:text-xl">
-                Team of 4 • Registration Fee: ₹800 per team
+                Team of 2- 4 • Registration Fee: ₹799 per team
               </div>
             </div>
 
@@ -150,7 +179,7 @@ export default function ImpactXHome() {
                             hover:shadow-[0_0_25px_rgba(239,68,68,1)]
                             hover:scale-105 transition-transform duration-300 text-lg"
                 >
-                Register Now <ArrowRight className="w-5 h-5 ml-2" />
+                Register  <ArrowRight className="w-5 h-5 ml-2" />
                 </GlassButton>
 
                 <GlassButton
@@ -249,33 +278,35 @@ export default function ImpactXHome() {
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {themes.map((theme, index) => {
-                  const Icon = theme.icon;
-                  return (
-                    <GlassButton
-                      key={index}
-                      className="rounded-2xl p-8 w-full text-left 
-                                 bg-red-600/20 border-red-400/40
-                                 shadow-[0_0_12px_rgba(239,68,68,0.7)] 
-                                 hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
-                                 hover:scale-105 transition-transform duration-300"
-                    >
-                      <div className="flex items-center mb-4">
-                        <Icon className="w-10 h-10 text-red-400 mr-4" />
-                        <h3 className="text-2xl font-bold text-white">{theme.title}</h3>
-                      </div>
-                      <p className="text-gray-300 text-lg">{theme.description}</p>
-                      {theme.examples && (
-                        <ul className="mt-3 text-sm text-gray-400 list-disc list-inside">
-                          {theme.examples.map((ex, i) => (
-                            <li key={i}>{ex}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </GlassButton>
-                  );
-                })}
-              </div>
+  {themes.map((theme, index) => {
+    const Icon = theme.icon;
+    return (
+      <GlassButton
+        key={index}
+        className={`rounded-2xl p-8 w-full text-left 
+                   bg-red-600/20 border-red-400/40
+                   shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                   hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
+                   hover:scale-105 transition-transform duration-300
+                   ${index === 2 ? "md:col-span-2 md:w-1/2 justify-self-center" : ""}`}
+      >
+        <div className="flex items-center mb-4">
+          <Icon className="w-10 h-10 text-red-400 mr-4" />
+          <h3 className="text-2xl font-bold text-white">{theme.title}</h3>
+        </div>
+        <p className="text-gray-300 text-lg">{theme.description}</p>
+        {theme.examples && (
+          <ul className="mt-3 text-sm text-gray-400 list-disc list-inside">
+            {theme.examples.map((ex, i) => (
+              <li key={i}>{ex}</li>
+            ))}
+          </ul>
+        )}
+      </GlassButton>
+    );
+  })}
+</div>
+
             </div>
 
             {/* Mission & Vision removed per request */}
@@ -448,8 +479,6 @@ export default function ImpactXHome() {
             </div>
 
             
-        
-                
           </div>
         </div>
       </section>
@@ -483,20 +512,19 @@ export default function ImpactXHome() {
                 <span className="hidden md:block">•</span>
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4" />
-                  <span>Team of 4 members</span>
+                  <span>Team of 2-4 members</span>
                 </div>
               </div>
 
               <div className="text-2xl font-bold text-red-400 mb-4">
-                Registration Fee: ₹800 per team
+                Registration Fee: ₹799 per team
               </div>
             </div>
 
             {/* Registration Button */}
             <div className="mb-12">
               <a 
-                href="https://unstop.com" 
-                target="_blank" 
+                href="https://forms.gle/PehnsMFcJpnkUU3m8"
                 rel="noopener noreferrer"
                 className="inline-block"
               >
@@ -506,7 +534,7 @@ export default function ImpactXHome() {
                   className="text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center
                              bg-red-500/30 border border-red-500/40 hover:bg-red-500/50"
                 >
-                  Register on Unstop
+                  Register 
                   <ExternalLink className="w-6 h-6 ml-3" />
                 </GlassButton>
               </a>
@@ -572,7 +600,7 @@ export default function ImpactXHome() {
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">Team Formation</h3>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Team size: 4 members (fixed)</li>
+                    <li>• Team size: 2 - 4 members </li>
                     <li>• Mixed skill sets encouraged</li>
                     <li>• Students from any institution welcome</li>
                     <li>• Registration fee: ₹799 per team</li>
