@@ -22,7 +22,7 @@ export default function ImpactXNavbar({ hideButtons = [] }) {
     <div className="fixed top-4 left-6 z-50 flex flex-col items-start gap-2">
       {/* ImpactX Navbar Title */}
       <span className="text-white font-bold text-sm uppercase tracking-wide mb-1">
-        ImpactX Navigation
+        ImpactX 2025
       </span>
 
       <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
