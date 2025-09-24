@@ -53,12 +53,15 @@ const Home = () => {
       {/* Navbar */}
       <Navbar />
 
-      {/* Header logo (scrollable) — larger and slightly clearer for a professional look */}
-      <div className="w-full flex justify-center mt-6 z-10">
-        <div className="glass rounded-full p-2 bg-white/3 backdrop-blur-sm">
-          <img src={Logo} alt="IEEE Logo" className="w-40 md:w-56 h-auto filter brightness-105 drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]" />
-        </div>
-      </div>
+      {/* Header logo — bigger and clean */}
+<div className="w-full flex justify-center mt-6 z-10">
+  <img
+    src={Logo}
+    alt="IEEE Logo"
+    className="w-80 md:w-90 h-auto filter brightness-105 drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]"
+  />
+</div>
+
       
 
       {/* Hero Section */}
@@ -66,12 +69,14 @@ const Home = () => {
     <div className="flex-1 flex flex-col justify-center items-center text-center max-w-6xl mx-auto">
               <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
 
-            <h2 className="text-5xl md:text-7xl font-bold mb-4 text-white">Welcome!</h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">Your IEEE member dashboard</p>
-            <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
-              Access upcoming events, check notifications, and stay updated with the latest IEEE activities.
-            </p>
-          </div>
+              <h2 className="text-5xl md:text-7xl font-bold mb-4 text-white">Welcome!</h2>  
+              <p className="text-xl md:text-2xl text-gray-300 mb-8">About IEEE Computer Society RNSIT Chapter</p>
+              <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+                The IEEE Computer Society (CS) student chapter at RNSIT is one of the most active technical communities on campus. It provides students with opportunities to explore computing and emerging technologies through workshops, hackathons, coding contests, and expert talks. The society fosters innovation, collaboration, and professional growth, helping students connect with industry leaders and the global IEEE network.
+
+
+              </p>
+            </div>
 
           {/* Info Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
