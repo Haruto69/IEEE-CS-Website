@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   ArrowRight, Calendar, MapPin, Users, Lightbulb, Code, Award, 
-  Globe, Leaf, Mail, ExternalLink, Trophy, CheckCircle, 
+  Globe, Leaf, Mail, ExternalLink,Clock, Trophy, CheckCircle, 
   Circle, Presentation, Coffee, 
   Utensils,
   ClipboardCheck,
