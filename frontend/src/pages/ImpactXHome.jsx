@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Calendar, MapPin, Users, Clock, Target, Lightbulb, Code, Award, 
   Globe, Leaf, Shield, GitMerge, Mail, ExternalLink, Trophy, CheckCircle, 
-  Circle, Presentation, Coffee 
+  Circle, Presentation, Coffee, 
+  Utensils,
+  ClipboardCheck,
+  Rocket,
+  Moon,
+  Music,
+  ClipboardList,
+  Gift,
+  CreditCard
 } from 'lucide-react';
 
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
@@ -16,32 +24,67 @@ import Logo from "../assets/impactx-logo.png";
 
 // Themes for About section
 const themes = [
-  { title: "Sustainability in Green Tech", description: "Create eco-friendly solutions for a greener future.", icon: Leaf, examples: ["Clean energy monitoring", "Waste reduction systems", "Carbon footprint calculators"] },
-  { title: "Women Safety", description: "Develop technology to enhance safety and security for women.", icon: Shield, examples: ["SOS applications", "Safe travel planners", "Community alert systems"] },
-  { title: "India Centric Innovations", description: "Build solutions addressing unique challenges and opportunities in India.", icon: Lightbulb, examples: ["Agritech solutions", "Vernacular language tools", "Digital literacy platforms"] },
-  { title: "Open Innovations", description: "Build upon existing open-source projects or create new ones for the community.", icon: GitMerge, examples: ["Developer tools", "Community platforms", "Decentralized applications"] }
+  { 
+    title: "Sustainability and Earth Tech", 
+    description: "Create eco-friendly solutions for a greener future.", 
+    icon: Leaf, 
+    examples: [
+      "Clean & Green Energy: Apps for renewable energy and consumption tracking.",
+      "Smart Waste Management: Platforms for recycling awareness and reporting.",
+      "Sustainable Mobility & Transport: Tools for eco-friendly commutes and traffic reduction."
+    ] 
+  },
+  { 
+    title: "FinTech & Digital Finance", 
+    description: "Build smart, secure, and inclusive financial solutions.", 
+    icon: CreditCard, 
+    examples: [
+      "Digital Payments & Financial Inclusion",
+      "Personal Finance & Wealth Management",
+      "Fraud Detection & Regulatory Tech (RegTech)"
+    ]
+  },
+  { 
+    title: "India Centric Innovations", 
+    description: "Build solutions addressing unique challenges and opportunities in India.", 
+    icon: Lightbulb, 
+    examples: ["Agritech solutions", "Vernacular language tools", "Digital literacy platforms"] 
+  },
 ];
+
+
 
 // Timeline events
 const day1Events = [
-  { time: "10:00 AM - 11:00 AM", title: "Orientation & Welcome", description: "Introduction to IEEE CS chapter, members, and activities", icon: Users, status: "upcoming" },
-  { time: "11:15 AM - 01:00 PM", title: "Workshop: AI & ML Basics", description: "Hands-on session on Artificial Intelligence and Machine Learning fundamentals", icon: Code, status: "upcoming" },
-  { time: "02:00 PM - 04:00 PM", title: "Technical Talk: Cybersecurity Trends", description: "Insights from industry experts on modern cybersecurity practices", icon: Presentation, status: "upcoming" },
-  { time: "04:15 PM - 05:30 PM", title: "Project Showcase & Networking", description: "Students present their mini-projects and connect with peers", icon: Trophy, status: "upcoming" }
+  { time: "12:00 PM - 1:00 AM", title: "Arrival and Check- in", description: "Wifi- credentials distribution", icon: Users, status: "upcoming" },
+  { time: "01:00 PM - 01:40 PM", title: "Inaugural & Welcome", description: "Speeches by HOD/Principal/Director. Rules explained", icon: Presentation, status: "upcoming" },
+  { time: "02:00 PM", title: "Hackathon Kickoff", description: "Hackathon officially begins , teams begin coding !", icon: Rocket, status: "upcoming" },
+  { time: "04:30 PM", title: "Tea Break", icon: Coffee, status: "upcoming" },
+  { time: "05:30 PM - 06:30 PM", title: "Jury Checkpoint 1", description: "Judges/Mentors go around for the first checkpoint", icon: ClipboardCheck, status: "upcoming" },
+  { time: "08:00 PM - 09:30 PM", title: "Dinner",  icon: Utensils, status: "upcoming" },
+  { time: "09:30 PM - 10:00 PM", title: "Jury Checkpoint 12", description: "Early prototype evaluation", icon: ClipboardCheck, status: "upcoming" },
+  { time: "11:30 PM Onwards", title: "Night Sprint", icon: Moon, status: "upcoming" },
 ];
 
 const day2Events = [
-  { time: "10:00 AM - 12:00 PM", title: "Hackathon / Coding Challenge", description: "Participate in mini coding challenges or hackathon activities", icon: Code, status: "upcoming" },
-  { time: "12:00 PM - 01:00 PM", title: "Mentorship & Debugging Support", description: "Get guidance from senior members and mentors", icon: Users, status: "upcoming" },
-  { time: "01:00 PM - 02:00 PM", title: "Lunch Break", description: "Networking lunch with IEEE CS members", icon: Coffee, status: "upcoming" },
-  { time: "02:00 PM - 04:00 PM", title: "Presentations & Feedback", description: "Teams present their solutions or projects; feedback from mentors", icon: Presentation, status: "upcoming" },
-  { time: "04:00 PM - 05:00 PM", title: "Closing Ceremony", description: "Recognition of contributors and summary of chapter activities", icon: Award, status: "upcoming" }
+  { time: "02:00 AM", title: "Refreshments", description: "Snacks + Coffee/Tea", icon: Coffee, status: "upcoming" },
+  { time: "03:00 PM - 03:30 AM", title: "Midnight Energizer", description: "Fun cultural/music/quiz activity", icon: Music, status: "upcoming" },
+  { time: "05:00 AM", title: "Tea Break", description: "Second round of tea served", icon: Coffee, status: "upcoming" },
+  { time: "07:00 AM - 08:00 AM", title: "Breakfast", description: "Breakfast served for all teams", icon: Utensils, status: "upcoming" },
+  { time: "10:00 AM - 11:00 AM", title: "Jury Checkpoint 3", description: "Major review by jury", icon: ClipboardCheck, status: "upcoming" },
+  { time: "11:30 AM - 12:30 PM", title: "Final Sprint", description: "Last round of polishing & testing", icon: Code, status: "upcoming" },
+  { time: "12:30 PM - 12:45 PM", title: "Code Freeze", description: "Final submission deadline", icon: Presentation, status: "upcoming" },
+  { time: "12:45 PM - 02:00 PM", title: "Final Jury Evaluation", description: "5–7 min presentations and project demos", icon: Presentation, status: "upcoming" },
+  { time: "02:00 PM - 02:30 PM", title: "Mini Auditorium Session", description: "Goodies distribution (notepads, badges, t-shirts if applicable)", icon: Gift, status: "upcoming" },
+  { time: "02:30 PM - 02:40 PM", title: "Faculty & Jury Words", description: "Closing notes from senior faculty and jury", icon: Users, status: "upcoming" },
+  { time: "02:40 PM - 03:00 PM", title: "Winners Announced", description: "Prize distribution, group photo & feedback", icon: Award, status: "upcoming" },
+  { time: "03:00 PM - 03:30 PM", title: "Mentor Meet & Feedback", description: "Feedback forms and participation certificates", icon: ClipboardList, status: "upcoming" }
 ];
 
 const currentSponsors = [
-  { name: "Unstop", logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg", description: "Platform for opportunities & talent" },
-  { name: "0xday", logo: "/0xday.png", description: "Cybersecurity community & events" },
-  { name: "IEEE CS Bangalore", logo: "/cs-black.png", description: "IEEE Computer Society Bangalore Section" }
+  { name: "", logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg",  },
+  { name: "", logo: "/0xday.png", description: "" },
+  { name: "", logo: "/cs-black.png", description: "" }
 ];
 
 const sponsorshipTiers = [
@@ -73,21 +116,28 @@ export default function ImpactXHome() {
         <div className="max-w-7xl mx-auto text-center">
 
             {/* Main Box */}
-            <div className="rounded-3xl pt-4 pb-6 px-12 md:px-40 backdrop-blur-2xl border border-white/20 shadow-2xl hover:shadow-red-500/20 transition-all">
-            <img src={Logo} alt="ImpactX Logo" className="w-96 h-auto mx-auto mt-0 mb-2 drop-shadow-lg" />
-            <p className="text-xl md:text-2xl text-white mb-1">24-Hour Innovation Challenge</p>
-            <p className="text-base md:text-lg text-white/80 mb-4 max-w-3xl mx-auto">
-                Join the most electrifying hackathon of the year at RNSIT. Build, innovate, and
-                create solutions that will shape tomorrow. 24 hours of pure coding excellence.
-            </p>
+            <div className="rounded-3xl pt-2 pb-6 px-12 md:px-40 backdrop-blur-2xl border border-white/20 shadow-2xl hover:shadow-red-500/20 transition-all">
+            <img src={Logo} alt="ImpactX Logo" className="w-80 md:w-96 h-auto mx-auto -mb-2 -mt-2 drop-shadow-lg" />
+      <p className="text-xl md:text-2xl text-white mb-0">24-Hour Innovation Challenge</p>
+      <p className="text-base md:text-lg text-white/80 mb-3 max-w-3xl mx-auto -mt-1">
+        Join the most electrifying hackathon of the year at RNSIT. Build, innovate, and
+        create solutions that will shape tomorrow. 24 hours of pure coding excellence.
+      </p>
 
             {/* Total Prize Pool Box */}
-            <div className="mb-8">
+            <div className="mb-4">
                 <div className="inline-block rounded-2xl p-6 border-2 border-red-500/60
                                 backdrop-blur-lg shadow-xl hover:scale-105 transition-transform">
                 <p className="text-lg md:text-xl text-red-400 font-semibold mb-2">Total Prize Pool</p>
                 <p className="text-5xl md:text-6xl font-bold text-white drop-shadow-md">₹50,000</p>
                 </div>
+            </div>
+
+            {/* Team & Fee Info (hero) */}
+            <div className="flex justify-center mb-4">
+              <div className="glass rounded-full px-5 py-2 text-white/90 text-lg md:text-xl">
+                Team of 4 • Registration Fee: ₹800 per team
+              </div>
             </div>
 
             {/* Register & Timeline Buttons with smooth scroll */}
@@ -114,6 +164,20 @@ export default function ImpactXHome() {
                 View Timeline
                 </GlassButton>
             </div>
+            {/* Quick Theme Names */}
+<div className="mt-4 flex flex-wrap justify-center gap-4">
+  {themes.map((theme, index) => (
+    <div
+      key={index}
+      className="px-4 py-2 rounded-full border border-red-400/40 
+                 backdrop-blur-md text-white/90 text-sm md:text-base 
+                 shadow-md hover:scale-105 transition"
+    >
+      {theme.title}
+    </div>
+  ))}
+</div>
+
 
             {/* Quick Stats */}
             <div className="rounded-3xl p-6 border border-white/20 backdrop-blur-xl shadow-lg mt-8">
@@ -214,36 +278,7 @@ export default function ImpactXHome() {
               </div>
             </div>
 
-            {/* Mission & Vision */}
-            <div className="grid md:grid-cols-2 gap-8 mb-20">
-              <GlassButton className="rounded-2xl p-8 w-full 
-                                      bg-red-600/20 border-red-400/40
-                                      shadow-[0_0_12px_rgba(239,68,68,0.7)] 
-                                      hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
-                                      hover:scale-105 transition-transform duration-300">
-                <Target className="w-12 h-12 text-red-400 mb-4" />
-                <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  To empower the next generation of innovators by providing a platform where 
-                  creativity meets technology, fostering collaboration and pushing the boundaries 
-                  of what's possible in 24 intensive hours.
-                </p>
-              </GlassButton>
-              
-              <GlassButton className="rounded-2xl p-8 w-full 
-                                      bg-red-600/20 border-red-400/40
-                                      shadow-[0_0_12px_rgba(239,68,68,0.7)] 
-                                      hover:shadow-[0_0_25px_rgba(239,68,68,1)] 
-                                      hover:scale-105 transition-transform duration-300">
-                <Lightbulb className="w-12 h-12 text-red-400 mb-4" />
-                <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  To become the premier hackathon that bridges the gap between academic excellence 
-                  and real-world impact, creating solutions that address global challenges and 
-                  shape the future of technology.
-                </p>
-              </GlassButton>
-            </div>
+            {/* Mission & Vision removed per request */}
 
             {/* What Makes Us Special */}
             <div className="text-center mb-16">
@@ -468,7 +503,7 @@ export default function ImpactXHome() {
               </div>
 
               <div className="text-2xl font-bold text-red-400 mb-4">
-                Registration Fee: ₹799 per team
+                Registration Fee: ₹800 per team
               </div>
             </div>
 
