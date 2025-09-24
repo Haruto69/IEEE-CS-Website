@@ -137,7 +137,6 @@ export default function ImpactXHome() {
       <HolographicBackground />
       <InteractiveParticles />
       <FloatingShapes />
-      <ImpactXNavbar />
       <Navbar />
 
       {/* Home Section */}
