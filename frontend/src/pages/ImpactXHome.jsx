@@ -84,7 +84,7 @@ const themes = [
 
 // Timeline events
 const day1Events = [
-  { time: "12:00 PM - 1:00 AM", title: "Arrival and Check- in", description: "Wifi- credentials distribution", icon: Users, status: "upcoming" },
+  { time: "12:00 PM - 1:00 PM", title: "Arrival and Check- in", description: "Wifi- credentials distribution", icon: Users, status: "upcoming" },
   { time: "01:00 PM - 01:40 PM", title: "Inaugural & Welcome", description: "Speeches by HOD/Principal/Director. Rules explained", icon: Presentation, status: "upcoming" },
   { time: "02:00 PM", title: "Hackathon Kickoff", description: "Hackathon officially begins , teams begin coding !", icon: Rocket, status: "upcoming" },
   { time: "04:30 PM", title: "Tea Break", icon: Coffee, status: "upcoming" },
