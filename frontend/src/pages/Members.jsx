@@ -5,6 +5,8 @@ import HolographicBackground from '../components/backgrounds/HolographicBackgrou
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
 import FloatingShapes from '../components/backgrounds/FloatingShapes';
 
+import kiranImg from '../pics/kiran.jpg';
+import swathiImg from '../pics/swathi.jpg';
 import nithyashreeImg from '../pics/nithyashree.jpg';
 import siriImg from '../pics/siri.jpg';
 import mukundImg from '../pics/mukund.jpg';
@@ -14,6 +16,8 @@ import rithikaImg from '../pics/rithika.jpg';
 import chethanaImg from '../pics/chethana.jpg';
 
 const members = [
+  { name: 'Dr. Kiran P', role: 'Head Of Department (CSE-CY)', img: kiranImg }, 
+  { name: 'Dr.Swathi Darla', role: 'Faculty Advisor', img: swathiImg },
   { name: 'Nithyashree', role: 'Chair', img: nithyashreeImg },
   { name: 'Siri V Hegde', role: 'Vice Chair', img: siriImg },
   { name: 'Mukund', role: 'Treasurer', img: mukundImg },
