@@ -1,21 +1,37 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import HolographicBackground from "../components/backgrounds/HolographicBackground";
 import InteractiveParticles from "../components/backgrounds/InteractiveParticles";
 import GlassButton from "../components/ui/GlassButton";
 import GlassSelect from "../components/ui/GlassSelect";
 import FloatingShapes from '../components/backgrounds/FloatingShapes';
-import { Clock, Users, Calendar, MapPin } from "lucide-react";
+import { Clock, Users, MapPin } from "lucide-react";
 import Logo from "../assets/ieee-logo.png";
 
 const Home = () => {
   const [formStatus, setFormStatus] = useState(""); // for success/error messages
+  const navigate = useNavigate();
 
   const infoBoxes = [
-    { title: "Upcoming Events", icon: <Clock className="h-10 w-10 text-blue-400 mb-4" />, description: "Stay updated on IEEE activities" },
-    { title: "Our Members", icon: <Users className="h-10 w-10 text-green-400 mb-4" />, description: "Meet and connect with peers" },
-    { title: "IEEE Calendar", icon: <Calendar className="h-10 w-10 text-purple-400 mb-4" />, description: "Mark important IEEE dates" },
-    { title: "Event Locations", icon: <MapPin className="h-10 w-10 text-red-400 mb-4" />, description: "Find where events are happening" },
+    { 
+      title: "Upcoming Events", 
+      icon: <Clock className="h-10 w-10 text-blue-400 mb-4" />, 
+      description: "Stay updated on IEEE activities",
+      action: () => navigate("/events")
+    },
+    { 
+      title: "Our Members", 
+      icon: <Users className="h-10 w-10 text-green-400 mb-4" />, 
+      description: "Meet and connect with peers",
+      action: () => navigate("/members")
+    },
+    { 
+      title: "Event Location", 
+      icon: <MapPin className="h-10 w-10 text-red-400 mb-4" />, 
+      description: "RNS Institute of Technology, Bangalore",
+      action: () => window.open("https://maps.app.goo.gl/zgjDYqMW1wAi6vrR8", "_blank")
+    },
   ];
 
   // Handle form submission
@@ -54,40 +70,36 @@ const Home = () => {
       <Navbar />
 
       {/* Header logo — bigger and clean */}
-<div className="w-full flex justify-center mt-6 z-10">
-  <img
-    src={Logo}
-    alt="IEEE Logo"
-    className="w-80 md:w-90 h-auto filter brightness-105 drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]"
-  />
-</div>
-
-      
+      <div className="w-full flex justify-center mt-6 z-10">
+        <img
+          src={Logo}
+          alt="IEEE Logo"
+          className="w-96 md:w-[400px] h-auto filter brightness-105 drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]"
+        />
+      </div>
 
       {/* Hero Section */}
-  <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20">
-    <div className="flex-1 flex flex-col justify-center items-center text-center max-w-6xl mx-auto">
-              <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
-
-              <h2 className="text-5xl md:text-7xl font-bold mb-4 text-white">Welcome!</h2>  
-              <p className="text-xl md:text-2xl text-gray-300 mb-8">About IEEE Computer Society RNSIT Chapter</p>
-              <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
-                The IEEE Computer Society (CS) student chapter at RNSIT is one of the most active technical communities on campus. It provides students with opportunities to explore computing and emerging technologies through workshops, hackathons, coding contests, and expert talks. The society fosters innovation, collaboration, and professional growth, helping students connect with industry leaders and the global IEEE network.
-
-
-              </p>
-            </div>
+      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20">
+        <div className="flex-1 flex flex-col justify-center items-center text-center max-w-6xl mx-auto">
+          <div className="glass rounded-3xl p-6 md:p-12 mb-8 flex flex-col items-center">
+            <h2 className="text-5xl md:text-7xl font-bold mb-4 text-white">Welcome!</h2>  
+            <p className="text-xl md:text-2xl text-gray-300 mb-8">About IEEE Computer Society RNSIT Chapter</p>
+            <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+              The IEEE Computer Society (CS) student chapter at RNSIT is one of the most active technical communities on campus. It provides students with opportunities to explore computing and emerging technologies through workshops, hackathons, coding contests, and expert talks. The society fosters innovation, collaboration, and professional growth, helping students connect with industry leaders and the global IEEE network.
+            </p>
+          </div>
 
           {/* Info Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {infoBoxes.map((box) => (
               <GlassButton
                 key={box.title}
+                onClick={box.action}
                 className="flex flex-col items-center text-center p-6 rounded-2xl
                           bg-transparent border-white/10
                           shadow-none
                           hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]
-                          hover:scale-105 transition-transform duration-300"
+                          hover:scale-105 transition-transform duration-300 cursor-pointer"
               >
                 {box.icon}
                 <h3 className="text-lg font-semibold text-white mt-2">{box.title}</h3>
