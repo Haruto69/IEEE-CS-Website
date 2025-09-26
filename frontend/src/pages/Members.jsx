@@ -9,9 +9,10 @@ import kiranImg from '../pics/kiran.jpg';
 import swathiImg from '../pics/swathi.jpg';
 import nithyashreeImg from '../pics/nithyashree.jpg';
 import siriImg from '../pics/siri.jpg';
+import devImg from '../pics/dev.jpg';
 import mukundImg from '../pics/mukund.jpg';
 import anirudhImg from '../pics/anirudh.jpg';
-import devImg from '../pics/dev.jpg';
+
 import rithikaImg from '../pics/rithika.jpg';
 import chethanaImg from '../pics/chethana.jpg';
 
@@ -20,9 +21,10 @@ const members = [
   { name: 'Dr.Swathi Darla', role: 'Faculty Advisor', img: swathiImg },
   { name: 'Nithyashree', role: 'Chair', img: nithyashreeImg },
   { name: 'Siri V Hegde', role: 'Vice Chair', img: siriImg },
+  { name: 'Dev', role: 'Secretary', img: devImg },
   { name: 'Mukund', role: 'Treasurer', img: mukundImg },
   { name: 'Anirudh', role: 'Joint Treasurer', img: anirudhImg },
-  { name: 'Dev', role: 'Secretary', img: devImg },
+ 
   { name: 'Rithika', role: 'Web Master', img: rithikaImg },
   { name: 'Chethana', role: 'Ex-com', img: chethanaImg },
 ];
