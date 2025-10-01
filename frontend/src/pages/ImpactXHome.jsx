@@ -579,9 +579,9 @@ export default function ImpactXHome() {
                 <h4 className="text-xl font-bold text-red-400 mb-3">Special Categories Include</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
                   <div>• Best Innovation</div>
-                  <div>• Best UI/UX Design</div>
+                 
                   <div>• Most Sustainable Solution</div>
-                  <div>• People's Choice Award</div>
+                 
                 </div>
               </div>
             </div>
