@@ -522,7 +522,7 @@ export default function ImpactXHome() {
             {/* Registration Button */}
             <div className="mb-12">
               <a 
-                href="https://forms.gle/PehnsMFcJpnkUU3m8"
+                href="https://forms.gle/6cszda5pHLuppoHW9"
                 rel="noopener noreferrer"
                 className="inline-block"
               >
