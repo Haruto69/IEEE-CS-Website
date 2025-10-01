@@ -522,7 +522,7 @@ export default function ImpactXHome() {
             {/* Registration Button */}
             <div className="mb-12">
               <a 
-                href="https://forms.gle/6cszda5pHLuppoHW9"
+                href="https://unstop.com/p/impactx25-hackathon-ieee-cs-rnsit-rns-institute-of-technology-rnsit-bengaluru-1566936"
                 rel="noopener noreferrer"
                 className="inline-block"
               >
