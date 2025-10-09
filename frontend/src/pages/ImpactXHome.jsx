@@ -689,8 +689,8 @@ export default function ImpactXHome() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {currentSponsors.map((sponsor, index) => (
-                <div key={index} className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+  {currentSponsors.map((sponsor, index) => (
+    <div key={index} className={`glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between ${index === 3 ? 'md:col-span-3 md:w-1/3 md:mx-auto' : ''}`}>
                   <div className="mb-6 flex-grow flex items-center justify-center">
                     <img 
                       src={sponsor.logo} 
