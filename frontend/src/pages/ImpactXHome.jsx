@@ -113,7 +113,8 @@ const currentSponsors = [
   { name: "", logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg",  },
   { name: "", logo: "/0xDay.png", description: "" },
   { name: "", logo: "/cs-black.png", description: "" },
-  { name: "", logo: "/gca.png", description: "" }
+  { name: "", logo: "/gca.png", description: "" },
+  { name: "", logo: "/lumbarpanels.png", description: "" }
 ];
 
 const sponsorshipTiers = [
