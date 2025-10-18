@@ -1,10 +1,4 @@
-import React, { useState } from 'react';
-import { 
-  ArrowRight, Calendar, MapPin, Users, Lightbulb, Code, Award, 
-  Globe, Leaf, Mail, ExternalLink, Clock, Trophy, CheckCircle, 
-  Circle, Presentation, Coffee, Utensils, ClipboardCheck, Rocket, 
-  Moon, Music, ClipboardList, Gift, CreditCard
-} from 'lucide-react';
+import React from 'react';
 
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
@@ -12,6 +6,7 @@ import FloatingShapes from '../components/backgrounds/FloatingShapes';
 import GlassButton from '../components/ui/GlassButton';
 import Navbar from "../components/Navbar";
 import Logo from "../assets/impactx-logo.png";
+import { Leaf, Lightbulb, CreditCard, Users, Presentation, Rocket, Coffee, ClipboardCheck, Utensils, Moon, Music, ClipboardList, Award, Code, Gift } from 'lucide-react';
 
 // Themes for About section
 const themes = [
@@ -70,30 +65,7 @@ const day2Events = [
   { time: "03:00 PM - 03:30 PM", title: "Mentor Meet & Feedback", description: "Feedback forms and participation certificates", icon: ClipboardList, status: "upcoming" }
 ];
 
-const currentSponsors = [
-  { name: "", logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg" },
-  { name: "", logo: "/0xDay.png", description: "" },
-  { name: "", logo: "/cs-black.png", description: "" },
-  { name: "", logo: "/gca.png", description: "" },
-  { name: "", logo: "/lumbarpanels.png", description: "" }
-];
-
-const sponsorshipTiers = [
-  { name: "Title Sponsor", price: "₹60,000+", color: "from-yellow-400 to-orange-400", benefits: ["Logo on website and event materials", "Opportunity to host a workshop or tech talk", "Booth space at events"] },
-  { name: "Co-Sponsor", price: "₹40,000+", color: "from-gray-400 to-gray-600", benefits: ["Logo on website", "Social media shoutout", "Access to networking sessions"] },
-  { name: "Associate Sponsor", price: "₹20,000+", color: "from-amber-600 to-yellow-600", benefits: ["Logo on website", "Swag bag inclusion"] },
-  { name: "Event Sponsor", price: "₹30,000+", color: "from-blue-400 to-blue-600", benefits: ["Event-specific branding", "Mention in newsletter"] },
-  { name: "Other Sponsors", price: "₹5,000 - 10,000", color: "from-green-400 to-teal-400", benefits: ["Mention on website", "Certificate of appreciation"] }
-];
-
 export default function ImpactXHome() {
-  const [selectedDay, setSelectedDay] = useState('day1');
-  const [selectedTier, setSelectedTier] = useState(null);
-  const buttonClasses =
-    "text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center bg-red-500/30 border border-red-500/40 hover:bg-red-500/50";
-
-  const currentEvents = selectedDay === 'day1' ? day1Events : day2Events;
-
   return (
     <div className="relative min-h-screen">
       <HolographicBackground />
@@ -130,10 +102,9 @@ export default function ImpactXHome() {
               </div>
             </div>
 
-            {/* Register & Timeline Buttons */}
+            {/* Register Button */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
               <GlassButton
-                onClick={() => document.getElementById('register').scrollIntoView({ behavior: 'smooth' })}
                 className="rounded-3xl w-full md:w-1/2 py-4 flex items-center justify-center
                             backdrop-blur-lg border border-red-400/40
                             shadow-[0_0_12px_rgba(239,68,68,0.7)] 
@@ -161,10 +132,6 @@ export default function ImpactXHome() {
           </div>
         </div>
       </section>
-
-      {/* About, Timeline, Registration, Sponsors Sections remain unchanged */}
-      {/* ... (rest of your JSX as in your original code, already correctly formatted inside the component) */}
-
     </div>
   );
 }
