@@ -179,7 +179,7 @@ export default function ImpactXHome() {
                             hover:shadow-[0_0_25px_rgba(239,68,68,1)]
                             hover:scale-105 transition-transform duration-300 text-lg"
                 >
-                Register  <ArrowRight className="w-5 h-5 ml-2" />
+                Registerations Closed
                 </GlassButton>
 
                 <GlassButton
@@ -521,26 +521,7 @@ export default function ImpactXHome() {
               </div>
             </div>
 
-            {/* Registration Button */}
-            <div className="mb-12">
-              <a 
-                href="https://unstop.com/p/impactx25-hackathon-ieee-cs-rnsit-rns-institute-of-technology-rnsit-bengaluru-1566936"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <GlassButton 
-                  variant="primary" 
-                  size="lg" 
-                  className="text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center
-                             bg-red-500/30 border border-red-500/40 hover:bg-red-500/50"
-                >
-                  Register 
-                  <ExternalLink className="w-6 h-6 ml-3" />
-                </GlassButton>
-              </a>
-              <p className="text-gray-400 mt-4">Registration closes October 20, 2025</p>
-            </div>
-          </div>
+        
 
           {/* Prize Pool */}
           <div className="mb-16">
@@ -630,7 +611,7 @@ export default function ImpactXHome() {
                   <div className="space-y-2 text-gray-300">
                     <p>• Email: ieeecsrnsit@gmail.com</p>
                     <p>• Venue: RNS Institute of Technology</p>
-                    <p>• Registration closes: October 20, 2025</p>
+                    <p>• Registration closed</p>
                   </div>
                 </div>
               </div>
