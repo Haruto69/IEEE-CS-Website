@@ -630,29 +630,6 @@ export default function ImpactXHome() {
                 <p className="text-xl text-white/80 mb-6">
                     Our IEEE-CS Chapter events are made possible by these amazing sponsors who support innovation and student growth.
                 </p>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <GlassButton
-                    size="lg"
-                    className={buttonClasses}
-                    onClick={() => {
-                    window.open(
-                        "https://mail.google.com/mail/?view=cm&fs=1&to=ieeecsrnsit@gmail.com",
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
-                    }}
-                >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Become a Sponsor
-                </GlassButton>
-
-                <a href="/Brochure.pdf" download className="w-full md:w-auto">
-                    <GlassButton size="lg" className={buttonClasses}>
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Download Brochure
-                    </GlassButton>
-                </a>
-                </div>
             </div>
           </div>
 
