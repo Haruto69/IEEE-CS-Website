@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Calendar, MapPin, Users, Lightbulb, Code, Award, 
-  Globe, Leaf, Mail, ExternalLink, Clock, Trophy, CheckCircle, 
+  Globe, Leaf, Mail, Clock, Trophy, CheckCircle, 
   Circle, Presentation, Coffee, Utensils, ClipboardCheck, Rocket, 
   Moon, Music, ClipboardList, Gift, CreditCard 
 } from 'lucide-react';
