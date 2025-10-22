@@ -106,9 +106,9 @@ const currentSponsors = [
   { name: "", logo: "/NTT data.png", description: "TITLE SPONSOR" },
   { name: "", logo: "Unstop Logo.png", description: "POWERED BY" },
   { name: "", logo: "/lumber panels.png", description: "CO-POWERED BY"},
-  { name: "", logo: "/0xDay.png", description: "PLATFORM PARTNER" },
+  { name: "", logo: "0xDay.png", description: "PLATFORM PARTNER" },
   { name: "", logo: "/Global academy.jpg", description: "ASSOCIATE SPONSOR" },
-  { name: "", logo: "/Canara.png", description: "ASSOCIATE SPONSOR" }
+  { name: "", logo: "Canara.png", description: "ASSOCIATE SPONSOR" }
 ];
 
 export default function ImpactXHome() {
