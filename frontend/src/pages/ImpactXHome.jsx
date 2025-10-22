@@ -113,7 +113,6 @@ const currentSponsors = [
 
 export default function ImpactXHome() {
   const [selectedDay, setSelectedDay] = useState('day1');
-  const [selectedTier, setSelectedTier] = useState(null);
   const buttonClasses =
   "text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center bg-red-500/30 border border-red-500/40 hover:bg-red-500/50";
 
