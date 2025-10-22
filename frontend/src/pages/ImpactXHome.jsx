@@ -169,28 +169,28 @@ export default function ImpactXHome() {
 
             {/* Register & Timeline Buttons with smooth scroll */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-                <GlassButton
-                onClick={() => document.getElementById('register').scrollIntoView({ behavior: 'smooth' })}
+              <GlassButton
                 className="rounded-3xl w-full md:w-1/2 py-4 flex items-center justify-center
-                            backdrop-blur-lg border border-red-400/40
-                            shadow-[0_0_12px_rgba(239,68,68,0.7)] 
-                            hover:shadow-[0_0_25px_rgba(239,68,68,1)]
-                            hover:scale-105 transition-transform duration-300 text-lg"
-                >
-                Register  <ArrowRight className="w-5 h-5 ml-2" />
-                </GlassButton>
+                          backdrop-blur-lg border border-red-400/40
+                          shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                          text-lg cursor-not-allowed"
+                disabled
+              >
+                Registrations Closed
+              </GlassButton>
 
-                <GlassButton
+              <GlassButton
                 onClick={() => document.getElementById('timeline').scrollIntoView({ behavior: 'smooth' })}
                 className="rounded-3xl w-full md:w-1/2 py-4 flex items-center justify-center
-                            backdrop-blur-lg border border-red-400/40
-                            shadow-[0_0_12px_rgba(239,68,68,0.7)] 
-                            hover:shadow-[0_0_25px_rgba(239,68,68,1)]
-                            hover:scale-105 transition-transform duration-300 text-lg"
-                >
+                          backdrop-blur-lg border border-red-400/40
+                          shadow-[0_0_12px_rgba(239,68,68,0.7)] 
+                          hover:shadow-[0_0_25px_rgba(239,68,68,1)]
+                          hover:scale-105 transition-transform duration-300 text-lg"
+              >
                 View Timeline
-                </GlassButton>
+              </GlassButton>
             </div>
+            
             {/* Quick Theme Names */}
 <div className="mt-4 flex flex-wrap justify-center gap-4">
   {themes.map((theme, index) => (
@@ -520,24 +520,18 @@ export default function ImpactXHome() {
             </div>
 
             {/* Registration Button */}
-            <div className="mb-12">
-              <a 
-                href="https://unstop.com/p/impactx25-hackathon-ieee-cs-rnsit-rns-institute-of-technology-rnsit-bengaluru-1566936"
-                rel="noopener noreferrer"
-                className="inline-block"
+            <div className="mb-12 flex justify-center">
+              <GlassButton 
+                variant="primary" 
+                size="lg" 
+                className="text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center
+                          bg-red-500/30 border border-red-500/40 cursor-not-allowed"
+                disabled
               >
-                <GlassButton 
-                  variant="primary" 
-                  size="lg" 
-                  className="text-xl px-10 py-5 w-full md:w-auto flex items-center justify-center
-                             bg-red-500/30 border border-red-500/40 hover:bg-red-500/50"
-                >
-                  Register 
-                  <ExternalLink className="w-6 h-6 ml-3" />
-                </GlassButton>
-              </a>
-              <p className="text-gray-400 mt-4">Registration closes October 20, 2025</p>
+                Registrations Closed
+              </GlassButton>
             </div>
+            <p className="text-gray-400 mt-4 text-center">Registration closes October 20, 2025</p>
           </div>
 
           {/* Prize Pool */}
