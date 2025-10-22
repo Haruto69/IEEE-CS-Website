@@ -608,7 +608,7 @@ export default function ImpactXHome() {
                   <div className="space-y-2 text-gray-300">
                     <p>• Email: ieeecsrnsit@gmail.com</p>
                     <p>• Venue: RNS Institute of Technology</p>
-                    <p>• Registration closes: October 20, 2025</p>
+                    <p>• Registration closed: October 20, 2025</p>
                   </div>
                 </div>
               </div>
