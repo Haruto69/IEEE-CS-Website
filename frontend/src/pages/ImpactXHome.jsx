@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { 
   ArrowRight, Calendar, MapPin, Users, Lightbulb, Code, Award, 
@@ -12,6 +13,9 @@ import {
   Gift,
   CreditCard
 } from 'lucide-react';
+=======
+import React from 'react';
+>>>>>>> 0a7e508344285923303b4349eed8d1300ed74dac
 
 import HolographicBackground from '../components/backgrounds/HolographicBackground';
 import InteractiveParticles from '../components/backgrounds/InteractiveParticles';
@@ -20,6 +24,7 @@ import GlassButton from '../components/ui/GlassButton';
 
 import Navbar from "../components/Navbar";
 import Logo from "../assets/impactx-logo.png";
+import { Leaf, Lightbulb, CreditCard, Users, Presentation, Rocket, Coffee, ClipboardCheck, Utensils, Moon, Music, ClipboardList, Award, Code, Gift } from 'lucide-react';
 
 // Themes for About section
 const themes = [
@@ -121,6 +126,33 @@ const sponsorshipTiers = [
   { name: "Associate Sponsor", price: "₹20,000+", color: "from-amber-600 to-yellow-600", benefits: ["Logo on website", "Swag bag inclusion"] },
   { name: "Event Sponsor", price: "₹30,000+", color: "from-blue-400 to-blue-600", benefits: ["Event-specific branding", "Mention in newsletter"] },
   { name: "Other Sponsors", price: "₹5,000 - 10,000", color: "from-green-400 to-teal-400", benefits: ["Mention on website", "Certificate of appreciation"] }
+];
+
+// Timeline events
+const day1Events = [
+  { time: "12:00 PM - 1:00 PM", title: "Arrival and Check-in", description: "Wifi- credentials distribution", icon: Users, status: "upcoming" },
+  { time: "01:00 PM - 01:40 PM", title: "Inaugural & Welcome", description: "Speeches by HOD/Principal/Director. Rules explained", icon: Presentation, status: "upcoming" },
+  { time: "02:00 PM", title: "Hackathon Kickoff", description: "Hackathon officially begins , teams begin coding !", icon: Rocket, status: "upcoming" },
+  { time: "04:30 PM", title: "Tea Break", icon: Coffee, status: "upcoming" },
+  { time: "05:30 PM - 06:30 PM", title: "Jury Checkpoint 1", description: "Judges/Mentors go around for the first checkpoint", icon: ClipboardCheck, status: "upcoming" },
+  { time: "08:00 PM - 09:30 PM", title: "Dinner",  icon: Utensils, status: "upcoming" },
+  { time: "09:30 PM - 10:00 PM", title: "Jury Checkpoint 2", description: "Early prototype evaluation", icon: ClipboardCheck, status: "upcoming" },
+  { time: "11:30 PM Onwards", title: "Night Sprint", icon: Moon, status: "upcoming" },
+];
+
+const day2Events = [
+  { time: "02:00 AM", title: "Refreshments", description: "Snacks + Coffee/Tea", icon: Coffee, status: "upcoming" },
+  { time: "03:00 AM - 03:30 AM", title: "Midnight Energizer", description: "Fun cultural/music/quiz activity", icon: Music, status: "upcoming" },
+  { time: "05:00 AM", title: "Tea Break", description: "Second round of tea served", icon: Coffee, status: "upcoming" },
+  { time: "07:00 AM - 08:00 AM", title: "Breakfast", description: "Breakfast served for all teams", icon: Utensils, status: "upcoming" },
+  { time: "10:00 AM - 11:00 AM", title: "Jury Checkpoint 3", description: "Major review by jury", icon: ClipboardCheck, status: "upcoming" },
+  { time: "11:30 AM - 12:30 PM", title: "Final Sprint", description: "Last round of polishing & testing", icon: Code, status: "upcoming" },
+  { time: "12:30 PM - 12:45 PM", title: "Code Freeze", description: "Final submission deadline", icon: Presentation, status: "upcoming" },
+  { time: "12:45 PM - 02:00 PM", title: "Final Jury Evaluation", description: "5–7 min presentations and project demos", icon: Presentation, status: "upcoming" },
+  { time: "02:00 PM - 02:30 PM", title: "Mini Auditorium Session", description: "Goodies distribution (notepads, badges, t-shirts if applicable)", icon: Gift, status: "upcoming" },
+  { time: "02:30 PM - 02:40 PM", title: "Faculty & Jury Words", description: "Closing notes from senior faculty and jury", icon: Users, status: "upcoming" },
+  { time: "02:40 PM - 03:00 PM", title: "Winners Announced", description: "Prize distribution, group photo & feedback", icon: Award, status: "upcoming" },
+  { time: "03:00 PM - 03:30 PM", title: "Mentor Meet & Feedback", description: "Feedback forms and participation certificates", icon: ClipboardList, status: "upcoming" }
 ];
 
 export default function ImpactXHome() {
@@ -373,6 +405,7 @@ export default function ImpactXHome() {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
       {/* Timeline Section */}
       <section id="timeline">
@@ -791,6 +824,8 @@ export default function ImpactXHome() {
 
         </div>
       </section>
+=======
+>>>>>>> 0a7e508344285923303b4349eed8d1300ed74dac
     </div>
   );
 }
