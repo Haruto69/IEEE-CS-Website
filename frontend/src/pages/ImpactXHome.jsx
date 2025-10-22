@@ -517,7 +517,7 @@ export default function ImpactXHome() {
                 Registrations Closed
               </GlassButton>
             </div>
-            <p className="text-gray-400 mt-4 text-center">Registration closes October 20, 2025</p>
+            <p className="text-gray-400 mt-4 text-center">Registration closed October 20, 2025</p>
           </div>
 
           {/* Prize Pool */}
